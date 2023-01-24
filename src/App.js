@@ -15,7 +15,8 @@ function App() {
       children: [
         {
           path: "/",
-          loader: async () => fetch("products.json"),
+          // loader: async () => fetch("products.json"),
+          loader: productsAndCartLoader,
           element: <Shop></Shop>,
         },
         {
