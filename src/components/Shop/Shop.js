@@ -1,25 +1,27 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import { addToDb, getStoredCart } from "../../utilities/fakedb";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
 
 const Shop = () => {
-  const [products, setProducts] = useState([]);
+  const products = useLoaderData();
+  // const [products, setProducts]= useState([]);
   const [cart, setCart] = useState([]);
 
-  useEffect(() => {
+  /* useEffect(() => {
     fetch("products.json")
       .then((res) => res.json())
       .then((data) => setProducts(data));
-  }, []);
+  }, []); */
 
   //get saved cart from local storage
   useEffect(() => {
     const storedCart = getStoredCart();
-    console.log(storedCart);
+
     const savedCart = [];
     for (const id in storedCart) {
       const addedProduct = products.find((product) => product.id === id);
