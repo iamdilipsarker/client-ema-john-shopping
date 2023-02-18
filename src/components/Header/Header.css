@@ -17,3 +17,10 @@
   padding: 5px;
   border-radius: 5px;
 }
+.btn-logout {
+  margin-left: 10px;
+  background-color: hotpink;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}
